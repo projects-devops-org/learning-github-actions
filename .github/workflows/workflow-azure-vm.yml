@@ -18,4 +18,5 @@ jobs:
           ssh -o StrictHostKeyChecking=no azureuser@40.82.162.21 touch hello.txt
 
       - name: "Run deploy script on Azure VM"
-        run: bash .github/scripts/deploy.sh
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: bash .github/scripts/deploy.sh main
