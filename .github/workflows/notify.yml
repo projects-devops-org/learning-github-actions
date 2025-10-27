@@ -20,9 +20,9 @@ jobs:
                 text:
                   type: "mrkdwn"
                   text: "<${{ github.event.repository.html_url }}|*Repository*> :star: \n
-                  *Pushed by*: ${{ github.event.pusher.name }} \n
-                  *Branch*: ${{ github.ref_name }} \n
-                  *Commit message*: ${{ github.event.head_commit.message }}
+                  *PR*: ${{ github.event.pull_request.title }} \n
+                  *Pushed by*: ${{ github.event.pull_request.user }} \n
+                  *Branch*: ${{ github.head_ref }}
                   "
                 accessory:
                   type: "image"
