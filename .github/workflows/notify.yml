@@ -21,8 +21,8 @@ jobs:
                   type: "mrkdwn"
                   text: "<${{ github.event.repository.html_url }}|*Repository*> :star: \n
                   *PR*: ${{ github.event.pull_request.title }} \n
-                  *Pushed by*: ${{ github.event.pull_request.user }} \n
-                  *Branch*: ${{ github.head_ref }}
+                  *Pushed by*: ${{ github.event.pull_request.user.name }} \n
+                  *Branch*: ${{ github.event.pull_request.head.ref }}
                   "
                 accessory:
                   type: "image"
