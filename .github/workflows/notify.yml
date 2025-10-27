@@ -1,8 +1,12 @@
 name: Notify with Slack
-on: push
+on:
+  pull_request:
+    types: [opened, labeled]
+
 jobs:
   notify:
     runs-on: ubuntu-latest
+    if: ${{ contains(github.event.pull_request.labels.*.name,'notify-slack') }}
     steps:
       - name: Post a message in a channel
         uses: slackapi/slack-github-action@v2.1.1
