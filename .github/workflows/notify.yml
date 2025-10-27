@@ -10,8 +10,7 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-            payload: |
-            text: "Danny Torrence left a 1 star review for your property."
+            text: "Hello!!!!!!!!!!!"
             blocks:
               - type: "section"
                 text:
