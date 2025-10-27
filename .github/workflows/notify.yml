@@ -15,10 +15,10 @@ jobs:
               - type: "section"
                 text:
                   type: "mrkdwn"
-                  text: "<${{ github.repositoryUrl }}|*Repository*> :star: \n 
-                    *Pushed by*: <${{ github.event.pusher.name }}> \n
-                    *Branch*: `${{ github.ref_name }}
-                    *Commit message*: ${{ github.event.head_commit.message }}
+                  text: "<${{ github.event.repository.url }}|*Repository*> :star: \n
+                  *Pushed by*: ${{ github.event.pusher.name }} \n
+                  *Branch*: ${{ github.ref_name }} \n
+                  *Commit message*: ${{ github.event.head_commit.message }}
                   "
                 accessory:
                   type: "image"
