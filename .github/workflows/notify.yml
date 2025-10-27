@@ -15,7 +15,7 @@ jobs:
               - type: "section"
                 text:
                   type: "mrkdwn"
-                  text: "<${{ github.event.repository.url }}|*Repository*> :star: \n
+                  text: "<${{ github.event.repository.html_url }}|*Repository*> :star: \n
                   *Pushed by*: ${{ github.event.pusher.name }} \n
                   *Branch*: ${{ github.ref_name }} \n
                   *Commit message*: ${{ github.event.head_commit.message }}
