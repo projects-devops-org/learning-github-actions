@@ -1,4 +1,7 @@
 name: Notify with Slack
+permissions:
+  contents: read
+  pull-requests: read
 on:
   pull_request:
     types: [opened, labeled]
