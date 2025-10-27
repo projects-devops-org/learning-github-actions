@@ -1,0 +1,24 @@
+name: Test MyCLI Setup
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install MyCLI
+        uses: ./.github/actions/my-cli-action
+        with:
+          version: "1.2.3"
+
+      - name: Verify CLI Installation
+        run: |
+          echo "Checking MyCLI version..."
+          mycli --version
