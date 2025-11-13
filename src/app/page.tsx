@@ -5,8 +5,7 @@ export default function Home() {
         <h2>
           My first deploy with Github Actions and use my own action v1 !!! 🙉
         </h2>
-        <p>HELLO!!!!!!!!</p>
-        <small>BYE!!!!!</small>
+        <small>BYE 🙉!!!!!</small>
       </main>
     </div>
   );
