@@ -1,0 +1,37 @@
+name: Notify with Slack
+permissions:
+  contents: read
+  pull-requests: read
+on:
+  pull_request:
+    types: [opened, labeled]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.event.pull_request.labels.*.name,'notify-slack') }}
+    steps:
+      - name: Post a message in a channel
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: "Hello!!!!!!!!!!!"
+            blocks:
+              - type: "section"
+                text:
+                  type: "mrkdwn"
+                  text: "<${{ github.event.repository.html_url }}|*Repository*> :star: \n
+                  *PR*: ${{ github.event.pull_request.title }} \n
+                  *Pushed by*: ${{ github.event.pull_request.user.login }} \n
+                  *Branch*: ${{ github.event.pull_request.base.ref }}
+                  "
+                accessory:
+                  type: "image"
+                  image_url: "${{ github.event.repository.owner.avatar_url }}"
+                  alt_text: "User Avatar"
+              - type: "section"
+                fields:
+                  - type: "mrkdwn"
+                    text: "*Job Status*: ${{ job.status }}"
