@@ -4,6 +4,6 @@ permissions:
   contents: write
 jobs:
   update-wiki-home:
-    uses: christianncode/workflow-utilities/.github/workflows/workflow-wiki.yml@main
+    uses: projects-devops-org/workflow-utilities/.github/workflows/workflow-wiki.yml@main
     with:
       message: "Actualizando wiki desde un workflow reusable"
